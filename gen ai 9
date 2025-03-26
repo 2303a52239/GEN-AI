@@ -1,0 +1,132 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNgoTbmpuADvBhfIx3iHiLk",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/2303a52239/GEN-AI/blob/main/gen%20ai%209\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HhKV95-3Y9r2",
+        "outputId": "2c88ada7-486d-49c2-f82d-fe615723ba86"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz\n",
+            "\u001b[1m11490434/11490434\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m0s\u001b[0m 0us/step\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/usr/local/lib/python3.11/dist-packages/keras/src/layers/core/dense.py:87: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.\n",
+            "  super().__init__(activity_regularizer=activity_regularizer, **kwargs)\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Epoch 1/10\n",
+            "\u001b[1m469/469\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m6s\u001b[0m 7ms/step - accuracy: 0.1034 - loss: 2.3119 - val_accuracy: 0.1183 - val_loss: 2.3002\n",
+            "Epoch 2/10\n",
+            "\u001b[1m469/469\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m5s\u001b[0m 6ms/step - accuracy: 0.1207 - loss: 2.2990 - val_accuracy: 0.1362 - val_loss: 2.2882\n",
+            "Epoch 3/10\n",
+            "\u001b[1m469/469\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m5s\u001b[0m 5ms/step - accuracy: 0.1435 - loss: 2.2871 - val_accuracy: 0.1644 - val_loss: 2.2763\n",
+            "Epoch 4/10\n",
+            "\u001b[1m469/469\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m3s\u001b[0m 5ms/step - accuracy: 0.1664 - loss: 2.2757 - val_accuracy: 0.1959 - val_loss: 2.2641\n",
+            "Epoch 5/10\n",
+            "\u001b[1m469/469\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m3s\u001b[0m 6ms/step - accuracy: 0.1980 - loss: 2.2628 - val_accuracy: 0.2235 - val_loss: 2.2515\n",
+            "Epoch 6/10\n",
+            "\u001b[1m469/469\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m2s\u001b[0m 5ms/step - accuracy: 0.2266 - loss: 2.2505 - val_accuracy: 0.2504 - val_loss: 2.2383\n",
+            "Epoch 7/10\n",
+            "\u001b[1m469/469\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m2s\u001b[0m 3ms/step - accuracy: 0.2484 - loss: 2.2379 - val_accuracy: 0.2734 - val_loss: 2.2245\n",
+            "Epoch 8/10\n",
+            "\u001b[1m469/469\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m3s\u001b[0m 3ms/step - accuracy: 0.2697 - loss: 2.2257 - val_accuracy: 0.2899 - val_loss: 2.2101\n",
+            "Epoch 9/10\n",
+            "\u001b[1m469/469\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m2s\u001b[0m 4ms/step - accuracy: 0.2917 - loss: 2.2088 - val_accuracy: 0.3065 - val_loss: 2.1949\n",
+            "Epoch 10/10\n",
+            "\u001b[1m469/469\u001b[0m \u001b[32m━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[37m\u001b[0m \u001b[1m3s\u001b[0m 6ms/step - accuracy: 0.3081 - loss: 2.1955 - val_accuracy: 0.3218 - val_loss: 2.1791\n",
+            "Training Accuracy: 31.86%\n",
+            "Testing Accuracy: 32.18%\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np\n",
+        "import tensorflow as tf\n",
+        "from tensorflow import keras\n",
+        "from tensorflow.keras import layers\n",
+        "from tensorflow.keras.datasets import mnist\n",
+        "\n",
+        "# Load the MNIST dataset\n",
+        "(x_train, y_train), (x_test, y_test) = mnist.load_data()\n",
+        "\n",
+        "# Preprocess the data\n",
+        "x_train = x_train.reshape(-1, 28*28).astype('float32') / 255.0\n",
+        "x_test = x_test.reshape(-1, 28*28).astype('float32') / 255.0\n",
+        "\n",
+        "# Convert labels to one-hot encoding\n",
+        "y_train = keras.utils.to_categorical(y_train, 10)\n",
+        "y_test = keras.utils.to_categorical(y_test, 10)\n",
+        "\n",
+        "# Build the ANN model\n",
+        "model = keras.Sequential([\n",
+        "    layers.Dense(32, activation='relu', input_shape=(28*28,)),\n",
+        "    layers.Dense(32, activation='relu'),\n",
+        "    layers.Dense(32, activation='relu'),\n",
+        "    layers.Dense(10, activation='softmax')])\n",
+        "\n",
+        "# Compile the model\n",
+        "model.compile(\n",
+        "    optimizer='adadelta',\n",
+        "    loss='categorical_crossentropy',\n",
+        "    metrics=['accuracy'])\n",
+        "\n",
+        "# Train the model\n",
+        "history = model.fit(\n",
+        "    x_train, y_train,\n",
+        "    epochs=10,\n",
+        "    batch_size=128,\n",
+        "    validation_data=(x_test, y_test))\n",
+        "\n",
+        "# Evaluate the model\n",
+        "train_loss, train_accuracy = model.evaluate(x_train, y_train, verbose=0)\n",
+        "test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=0)\n",
+        "\n",
+        "print(f\"Training Accuracy: {train_accuracy * 100:.2f}%\")\n",
+        "print(f\"Testing Accuracy: {test_accuracy * 100:.2f}%\")\n"
+      ]
+    }
+  ]
+}
